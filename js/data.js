@@ -7,7 +7,7 @@
 //   { type: 'versicles',  lines: [string, string] }
 //   { type: 'lordsPrayer', traditional, contemporary }
 //   { type: 'heading',    text }
-//   { type: 'prompt',     id, text }   -- discussion question, progress-tracked
+//   { type: 'prompt',     id, text }   -- discussion question
 //   { type: 'table',      rows: [[string, string], ...] }
 //   { type: 'list',       items: [string, ...] }
 

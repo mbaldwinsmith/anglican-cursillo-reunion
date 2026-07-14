@@ -1,359 +1,106 @@
-/* Group Reunion Card - styles */
-
 :root {
-  --color-bg: #fdfcfb;
-  --color-surface: #ffffff;
-  --color-text: #1f2430;
-  --color-muted: #5b6272;
-  --color-border: #dcdfe6;
-  --color-accent: #2b3a55;
-  --color-accent-contrast: #ffffff;
-  --color-focus: #3b6ea5;
-  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 1rem;
-  --space-4: 1.5rem;
-  --space-5: 2.5rem;
-  --touch-target: 2.75rem;
+  --paper: #f4ecdd;
+  --paper-2: #fbf6ec;
+  --ink: #2b2721;
+  --ink-soft: #4d463b;
+  --muted: #867c6c;
+  --line: #e4d9c5;
+  --line-soft: #eee5d5;
+  --accent: #9c3b2c;
+  --accent-soft: #efe0d7;
+  --gold: #a97f36;
+  --serif: 'Newsreader', Georgia, serif;
+  --sans: 'Figtree', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #14161c;
-    --color-surface: #1c1f28;
-    --color-text: #e8e9ee;
-    --color-muted: #a3a8b8;
-    --color-border: #363b4a;
-    --color-accent: #7d9bd4;
-    --color-accent-contrast: #10131a;
-    --color-focus: #9cc2f0;
-  }
-}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: auto; }
+body { margin: 0; background: var(--paper); color: var(--ink); }
+button { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 
-* {
-  box-sizing: border-box;
+#app-wrapper {
+  min-height: 100vh;
+  font: 400 20px/1.65 var(--serif);
+  background: radial-gradient(120% 60% at 50% -10%, rgba(255,252,245,.9) 0%, rgba(255,252,245,0) 55%), var(--paper);
 }
-
-html {
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: var(--font-body);
-  background: var(--color-bg);
-  color: var(--color-text);
-  line-height: 1.5;
-}
-
-:focus-visible {
-  outline: 3px solid var(--color-focus);
-  outline-offset: 2px;
-}
-
-/* Header */
 
 header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-  padding: var(--space-3) var(--space-3) var(--space-2);
-}
-
-header h1 {
-  margin: 0 0 var(--space-2);
-  font-size: 1.3rem;
-}
-
-#progress-bar {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  flex-wrap: wrap;
-}
-
-#progress-bar progress {
-  flex: 1 1 8rem;
-  height: 0.6rem;
-  accent-color: var(--color-accent);
-}
-
-#progress-label {
-  color: var(--color-muted);
-  font-size: 0.85rem;
-  white-space: nowrap;
-}
-
-#reset-progress {
-  margin-left: auto;
-}
-
-/* Section nav */
-
-#section-nav {
-  display: flex;
-  gap: var(--space-1);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x proximity;
-  padding: var(--space-2) var(--space-3);
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-}
-
-#section-nav button {
-  scroll-snap-align: start;
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  gap: var(--space-1);
-  padding: var(--space-2) var(--space-3);
-  min-height: var(--touch-target);
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  background: var(--color-bg);
-  color: var(--color-text);
-  font: inherit;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-#section-nav button[aria-current="page"] {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: var(--color-accent-contrast);
-}
-
-.nav-badge {
-  color: inherit;
-  opacity: 0.75;
-  font-size: 0.8rem;
-}
-
-@media (min-width: 640px) {
-  #section-nav {
-    flex-wrap: wrap;
-    overflow-x: visible;
-    justify-content: center;
-  }
-}
-
-/* Main content */
-
-main {
-  display: block;
-  max-width: 42rem;
+  max-width: 34em;
   margin: 0 auto;
-  padding: var(--space-4) var(--space-3) var(--space-5);
-}
-
-.card-section h2 {
-  margin-top: 0;
-  font-size: 1.4rem;
-}
-
-.card-section h3 {
-  font-size: 1.1rem;
-  color: var(--color-accent);
-  margin-top: var(--space-4);
-}
-
-.card-section p {
-  margin: var(--space-3) 0;
-}
-
-/* Scripture */
-
-.scripture {
-  margin: var(--space-3) 0;
-  padding: var(--space-2) var(--space-3);
-  border-left: 3px solid var(--color-accent);
-  background: var(--color-surface);
-  font-style: italic;
-  color: var(--color-muted);
-}
-
-.scripture p {
-  margin: 0 0 var(--space-1);
-}
-
-.scripture footer {
-  font-size: 0.9rem;
-}
-
-/* Versicles */
-
-.versicles {
-  margin: var(--space-3) 0;
-  font-style: italic;
-  color: var(--color-muted);
-}
-
-.versicle {
-  margin: 0;
-}
-
-/* Lord's Prayer */
-
-.lords-prayer {
-  margin: var(--space-3) 0;
-}
-
-.lords-prayer-label {
-  font-weight: 600;
-}
-
-.lords-prayer-variant {
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
-  margin-bottom: var(--space-2);
-  overflow: hidden;
-}
-
-.lords-prayer-variant summary {
-  padding: var(--space-2) var(--space-3);
-  min-height: var(--touch-target);
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-weight: 600;
-  background: var(--color-surface);
-}
-
-.lords-prayer-variant p {
-  margin: 0;
-  padding: 0 var(--space-3) var(--space-3);
-}
-
-/* Prompts */
-
-.prompt {
-  margin: var(--space-3) 0;
-}
-
-.prompt label {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-2);
-  min-height: var(--touch-target);
-  padding: var(--space-2) var(--space-2);
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
-
-.prompt label:hover {
-  background: var(--color-surface);
-}
-
-.prompt input[type="checkbox"] {
-  flex: 0 0 auto;
-  width: 1.4rem;
-  height: 1.4rem;
-  margin-top: 0.1rem;
-  accent-color: var(--color-accent);
-}
-
-/* Example tables */
-
-.example-table {
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-  margin: var(--space-2) 0 var(--space-3);
-}
-
-.example-table td {
-  padding: var(--space-1) var(--space-2);
-  border-bottom: 1px solid var(--color-border);
-  overflow-wrap: break-word;
-}
-
-@media (max-width: 480px) {
-  .example-table,
-  .example-table tbody,
-  .example-table tr,
-  .example-table td {
-    display: block;
-    width: 100%;
-  }
-
-  .example-table tr {
-    border-bottom: 1px solid var(--color-border);
-    padding: var(--space-1) 0;
-  }
-
-  .example-table td {
-    border-bottom: none;
-    padding: 0.1rem 0;
-  }
-}
-
-/* Plain lists */
-
-.card-section ul {
-  margin: var(--space-3) 0;
-  padding-left: 1.3rem;
-}
-
-.card-section li {
-  margin: var(--space-1) 0;
-}
-
-/* Pager */
-
-.pager {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--space-2);
-  max-width: 42rem;
-  margin: 0 auto;
-  padding: 0 var(--space-3) var(--space-4);
-}
-
-.pager button {
-  flex: 1 1 auto;
-  min-height: var(--touch-target);
-  padding: var(--space-2) var(--space-3);
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
-  background: var(--color-surface);
-  color: var(--color-text);
-  font: inherit;
-  cursor: pointer;
-}
-
-.pager button:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-/* Footer */
-
-footer {
+  padding: min(14vh, 7em) 1.6em 5em;
   text-align: center;
-  color: var(--color-muted);
-  font-size: 0.85rem;
-  padding: var(--space-3);
+  animation: rc-rise .8s ease both;
 }
-
-/* Reusable button base */
-
-button {
-  -webkit-tap-highlight-color: transparent;
+@keyframes rc-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.cover-medallion {
+  width: 8.4em; height: 8.4em; margin: 0 auto 1.8em; overflow: hidden; border-radius: 50%; background: #fff;
+  box-shadow: 0 0 0 1px var(--line), 0 14px 40px -18px rgba(60,40,20,.45);
 }
+.cover-medallion img { width: 118%; height: 118%; object-fit: cover; object-position: center 46%; transform: translate(-8%,-6%); }
+.cover-eyebrow { margin: 0 0 .9em; color: var(--accent); font: 600 .72em/1.4 var(--sans); letter-spacing: .28em; text-transform: uppercase; }
+header h1 { margin: 0; font: 500 2.9em/1.08 var(--serif); letter-spacing: -.01em; }
+.cover-motto { max-width: 20em; margin: 1.25em auto 0; font-size: 1.28em; line-height: 1.45; }
+.cover-motto em { color: var(--accent); }
+.cover-motto span { color: var(--muted); }
+.cover-intro { max-width: 26em; margin: 1.8em auto 0; color: var(--ink-soft); font-size: 1.02em; }
+.cover-cue { display: flex; flex-direction: column; align-items: center; margin-top: 2.6em; color: var(--muted); font: 600 .66em/1.4 var(--sans); letter-spacing: .22em; text-transform: uppercase; }
+.cover-arrow { margin-top: .45em; font-size: 1.8em; line-height: 1; }
 
-#reset-progress {
-  min-height: 2rem;
-  padding: var(--space-1) var(--space-2);
-  border: 1px solid var(--color-border);
-  border-radius: 0.4rem;
-  background: var(--color-surface);
-  color: var(--color-text);
-  font: inherit;
-  font-size: 0.8rem;
-  cursor: pointer;
+main { display: block; }
+.card-section { max-width: 34em; margin: 0 auto; padding: 2.5em 1.6em; }
+.section-header { margin-bottom: 2.2em; text-align: center; }
+.section-numeral { color: var(--gold); font: 600 1em/1.3 var(--sans); letter-spacing: .32em; }
+.section-header h2 { margin: .15em 0 0; font: 500 2.05em/1.2 var(--serif); }
+.card-section > p { margin: 1em 0; }
+.scripture { margin: 0 0 2em; padding: .2em 0 .2em 1.1em; border-left: 2px solid var(--gold); }
+.scripture p { margin: 0; color: var(--ink-soft); font: italic 400 1.3em/1.5 var(--serif); }
+.scripture footer { margin-top: .7em; color: var(--muted); font: 400 .8em/1.4 var(--sans); letter-spacing: .06em; text-align: left; }
+.versicles { margin: 1.4em 0; padding: 1.2em 1.3em; border: 1px solid var(--line); border-radius: .7em; background: var(--paper-2); }
+.versicle { display: flex; gap: .7em; margin: 0; color: var(--ink-soft); font-style: italic; }
+.versicle + .versicle { margin-top: .45em; }
+.versicle-mark { flex: 0 0 auto; color: var(--gold); font: 600 1em/1.65 var(--sans); }
+.versicle + .versicle .versicle-mark { color: var(--accent); }
+.sub-heading { margin: 1.8em 0 .6em; color: var(--accent); font: 600 .78em/1.4 var(--sans); letter-spacing: .18em; text-transform: uppercase; }
+.section-header + .sub-heading, .scripture + .sub-heading { margin-top: 1.5em; }
+.prompt { margin: .55em 0 1em; font-size: 1.12em; line-height: 1.55; }
+.prompt-accent { padding-left: 1.1em; border-left: 2px solid var(--accent-soft); }
+.example-label { display: block; margin: -.3em 0 .7em; color: var(--muted); font: 500 .78em/1.4 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+.example-pills { display: flex; flex-wrap: wrap; gap: .5em; margin-bottom: 1.5em; }
+.example-pills span { padding: .35em .9em; border: 1px solid var(--line); border-radius: 999px; background: var(--paper-2); font-size: .92em; line-height: 1.45; }
+.card-section ul { display: flex; flex-direction: column; gap: .55em; margin: 1em 0 1.5em; padding: 0; color: var(--ink-soft); list-style: none; }
+.card-section li { display: flex; gap: .7em; }
+.card-section li > :first-child { color: var(--gold); }
+.thanksgiving { padding: 1.3em 1.4em; border: 1px solid var(--line); border-radius: .7em; background: var(--paper-2); color: var(--ink-soft); font-style: italic; text-align: center; }
+
+.lords-prayer { margin: 1.8em 0; }
+.lords-prayer-header { display: flex; align-items: center; gap: .8em; }
+.lords-prayer-header h3 { flex: none; margin: 0; color: var(--accent); font: 600 1.05em/1.3 var(--sans); }
+.lords-prayer-rule { flex: 1; height: 1px; background: var(--line); }
+.prayer-toggle { display: flex; flex: none; padding: .2em; border: 1px solid var(--line); border-radius: 999px; background: var(--paper-2); }
+.prayer-toggle button { padding: .45em 1em; border: 0; border-radius: 999px; background: transparent; color: var(--muted); font: 600 .72em/1.3 var(--sans); cursor: pointer; }
+.prayer-toggle button.active { background: var(--accent); color: #fff; }
+.prayer-text { margin: 1em 0 0; color: var(--ink-soft); font-size: 1.06em; line-height: 1.7; }
+
+.page-footer { max-width: 34em; margin: 0 auto; padding: 3.5em 1.6em 6em; color: var(--muted); text-align: center; }
+.page-footer p { margin: .35em 0; font: 400 .78em/1.5 var(--sans); }
+.footer-cross { color: var(--gold); font-size: 1.1em; }
+.page-footer .footer-registration { font-size: .68em; opacity: .7; }
+
+#jump-menu { position: fixed; right: max(1.1em, env(safe-area-inset-right)); bottom: max(1.1em, env(safe-area-inset-bottom)); z-index: 50; display: flex; flex-direction: column; align-items: flex-end; gap: .7em; font-size: 20px; }
+.jump-trigger { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; width: 3em; height: 3em; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--paper-2); color: var(--ink-soft); box-shadow: 0 10px 26px -12px rgba(60,40,20,.5); cursor: pointer; transition: background .2s, color .2s; }
+.jump-trigger span { width: 1.05em; height: 1.5px; background: currentColor; }
+.open .jump-trigger { border-color: var(--accent); background: var(--accent); color: #fff; }
+.jump-panel { position: absolute; right: 0; bottom: 3.7em; min-width: 11em; padding: .5em; border: 1px solid var(--line); border-radius: .9em; background: var(--paper-2); box-shadow: 0 18px 44px -20px rgba(60,40,20,.5); opacity: 0; pointer-events: none; transform: translateY(8px) scale(.96); transform-origin: bottom right; transition: opacity .22s, transform .22s; }
+.open .jump-panel { opacity: 1; pointer-events: auto; transform: none; }
+.jump-panel button { display: flex; align-items: center; gap: .6em; width: 100%; padding: .6em .8em; border: 0; border-radius: .55em; background: transparent; color: var(--ink-soft); font: 500 .82em/1.35 var(--sans); text-align: left; cursor: pointer; }
+.jump-panel button.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.jump-numeral { width: 1.4em; flex: 0 0 1.4em; color: var(--gold); }
+
+@media (max-width: 520px) {
+  #app-wrapper { font-size: 18px; }
+  .lords-prayer-header { flex-wrap: wrap; }
+  .lords-prayer-rule { min-width: 2em; }
+  .prayer-toggle { order: 3; margin-left: auto; }
 }
+@media (prefers-reduced-motion: reduce) { header { animation: none; } .jump-panel { transition: none; } }

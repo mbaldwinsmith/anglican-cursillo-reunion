@@ -3,32 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4ecdd">
   <title>Group Reunion Card</title>
-  <meta name="theme-color" content="#2b3a55">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
   <link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <script type="module" src="js/app.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Group Reunion Card</h1>
-    <div id="progress-bar" aria-label="Overall progress"></div>
-  </header>
-
-  <nav id="section-nav" aria-label="Section navigation"></nav>
-
-  <main id="app"></main>
-
-  <div id="pager" class="pager">
-    <button id="prev-section" type="button">‹ Previous</button>
-    <button id="next-section" type="button">Next ›</button>
+  <div id="app-wrapper">
+    <header id="top">
+      <div class="cover-medallion"><img src="icons/CursilloCross.png" alt="Anglican Cursillo cross"></div>
+      <p class="cover-eyebrow">Anglican Cursillo</p>
+      <h1>Group Reunion Card</h1>
+      <p class="cover-motto"><em>Christ is counting on you!</em><br><span>&hellip;and I on Him!</span></p>
+      <p class="cover-intro">A reunion group is a small group of friends who meet regularly to encourage one another in their life in Christ.</p>
+      <div class="cover-cue" aria-hidden="true"><span>Begin together</span><span class="cover-arrow">&darr;</span></div>
+    </header>
+    <main id="app"></main>
+    <footer class="page-footer">
+      <span class="footer-cross" aria-hidden="true">&#10013;</span>
+      <p>&copy; British Anglican Cursillo Council 2003</p>
+      <p class="footer-registration">Anglican Cursillo&reg; &mdash; Registered at the U.S. Patent Office</p>
+    </footer>
   </div>
-
-  <footer>
-    <p>&copy; British Anglican Cursillo Council 2003</p>
-  </footer>
+  <div id="jump-menu"></div>
 </body>
 </html>

@@ -1,91 +1,93 @@
-// Group Reunion Card - section nav, hash routing, prev/next, keyboard nav.
+let animationFrame;
 
-function sectionIndex(sections, id) {
-  const idx = sections.findIndex((s) => s.id === id);
-  return idx === -1 ? 0 : idx;
+function tweenScroll(target) {
+  const maximum = document.documentElement.scrollHeight - window.innerHeight;
+  const destination = Math.max(0, Math.min(target, maximum));
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    window.scrollTo(0, destination);
+    return;
+  }
+  if (animationFrame) cancelAnimationFrame(animationFrame);
+  const origin = window.scrollY;
+  const distance = destination - origin;
+  if (Math.abs(distance) < 2) return window.scrollTo(0, destination);
+  const duration = Math.min(700, Math.max(300, Math.abs(distance) * 0.5));
+  const start = performance.now();
+  const step = (now) => {
+    const time = Math.min(1, (now - start) / duration);
+    const easing = time < 0.5 ? 2 * time * time : 1 - Math.pow(-2 * time + 2, 2) / 2;
+    window.scrollTo(0, origin + distance * easing);
+    if (time < 1) animationFrame = requestAnimationFrame(step);
+  };
+  animationFrame = requestAnimationFrame(step);
 }
 
 export function initNav(sections) {
-  const navEl = document.getElementById('section-nav');
-  const mainEl = document.getElementById('app');
-  const prevBtn = document.getElementById('prev-section');
-  const nextBtn = document.getElementById('next-section');
+  const menu = document.getElementById('jump-menu');
+  const panel = document.createElement('div');
+  panel.className = 'jump-panel';
+  panel.id = 'jump-panel';
+  const trigger = document.createElement('button');
+  trigger.type = 'button';
+  trigger.className = 'jump-trigger';
+  trigger.setAttribute('aria-label', 'Open section menu');
+  trigger.setAttribute('aria-expanded', 'false');
+  trigger.setAttribute('aria-controls', panel.id);
+  trigger.innerHTML = '<span></span><span></span><span></span>';
+  const items = new Map();
+  const links = [{ id: 'top', numeral: '\u2191', label: 'Top' }, ...sections.map((section, index) => ({
+    id: section.id, numeral: ['I', 'II', 'III', 'IV', 'V'][index], label: section.navLabel
+  }))];
 
-  const navButtons = new Map();
-  for (const section of sections) {
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.dataset.sectionId = section.id;
-    btn.addEventListener('click', () => {
-      location.hash = section.id;
+  function setOpen(open) {
+    menu.classList.toggle('open', open);
+    trigger.setAttribute('aria-expanded', String(open));
+    trigger.setAttribute('aria-label', open ? 'Close section menu' : 'Open section menu');
+  }
+
+  links.forEach(({ id, numeral, label }) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.dataset.target = id;
+    const number = document.createElement('span');
+    number.className = 'jump-numeral';
+    number.textContent = numeral;
+    const text = document.createElement('span');
+    text.textContent = label;
+    button.append(number, text);
+    button.addEventListener('click', () => {
+      setOpen(false);
+      const target = document.getElementById(id);
+      tweenScroll(target.getBoundingClientRect().top + window.scrollY - (id === 'top' ? 0 : 12));
     });
-
-    const label = document.createElement('span');
-    label.className = 'nav-label';
-    label.textContent = section.navLabel;
-
-    const badge = document.createElement('span');
-    badge.className = 'nav-badge';
-    badge.dataset.badgeFor = section.id;
-
-    btn.append(label, badge);
-    navEl.appendChild(btn);
-    navButtons.set(section.id, btn);
-  }
-
-  function showSection(id) {
-    const idx = sectionIndex(sections, id);
-    const section = sections[idx];
-
-    for (const s of sections) {
-      const el = document.getElementById(s.id);
-      if (el) el.hidden = s.id !== section.id;
-    }
-
-    for (const [sid, btn] of navButtons) {
-      if (sid === section.id) btn.setAttribute('aria-current', 'page');
-      else btn.removeAttribute('aria-current');
-    }
-
-    prevBtn.disabled = idx <= 0;
-    nextBtn.disabled = idx >= sections.length - 1;
-
-    document.title = `${section.title} – Group Reunion Card`;
-  }
-
-  function goTo(id) {
-    if (location.hash.slice(1) === id) {
-      showSection(id);
-    } else {
-      location.hash = id;
-    }
-  }
-
-  function goToOffset(offset) {
-    const idx = sectionIndex(sections, location.hash.slice(1));
-    const nextIdx = idx + offset;
-    if (nextIdx >= 0 && nextIdx < sections.length) {
-      goTo(sections[nextIdx].id);
-    }
-  }
-
-  window.addEventListener('hashchange', () => {
-    showSection(location.hash.slice(1));
+    panel.appendChild(button);
+    items.set(id, button);
   });
 
-  prevBtn.addEventListener('click', () => goToOffset(-1));
-  nextBtn.addEventListener('click', () => goToOffset(1));
-
-  mainEl.addEventListener('keydown', (event) => {
-    if (event.target.matches('input, textarea, select')) return;
-    if (event.key === 'ArrowLeft') goToOffset(-1);
-    else if (event.key === 'ArrowRight') goToOffset(1);
+  trigger.addEventListener('click', () => setOpen(!menu.classList.contains('open')));
+  document.addEventListener('click', (event) => {
+    if (!menu.contains(event.target)) setOpen(false);
   });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setOpen(false);
+  });
+  menu.append(panel, trigger);
 
-  const requestedId = location.hash.slice(1);
-  const initialId = sections.some((s) => s.id === requestedId) ? requestedId : sections[0].id;
-  if (location.hash.slice(1) !== initialId) {
-    history.replaceState(null, '', `#${initialId}`);
+  function updateActive() {
+    const threshold = window.scrollY + window.innerHeight * 0.35;
+    let active = 'top';
+    sections.forEach((section) => {
+      const element = document.getElementById(section.id);
+      if (element.offsetTop <= threshold) active = section.id;
+    });
+    items.forEach((button, id) => {
+      const current = id === active;
+      button.classList.toggle('active', current);
+      if (current) button.setAttribute('aria-current', 'true');
+      else button.removeAttribute('aria-current');
+    });
   }
-  showSection(initialId);
+  window.addEventListener('scroll', updateActive, { passive: true });
+  window.addEventListener('resize', updateActive);
+  updateActive();
 }
