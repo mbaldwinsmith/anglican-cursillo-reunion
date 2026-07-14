@@ -1,6 +1,6 @@
 // Group Reunion Card - service worker for offline support.
 // Bump CACHE_VERSION whenever any app-shell file below changes.
-const CACHE_VERSION = 'v6';
+const CACHE_VERSION = 'v7';
 const CACHE_NAME = `reunion-card-${CACHE_VERSION}`;
 
 const APP_SHELL = [
