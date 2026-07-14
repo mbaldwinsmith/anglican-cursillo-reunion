@@ -1,3 +1,27 @@
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('../fonts/newsreader-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url('../fonts/newsreader-italic-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('../fonts/figtree-latin.woff2') format('woff2');
+}
+
 :root {
   --paper: #f4ecdd;
   --paper-2: #fbf6ec;

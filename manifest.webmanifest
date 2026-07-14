@@ -1,9 +1,12 @@
 {
   "name": "Group Reunion Card",
   "short_name": "Reunion Card",
-  "start_url": "/",
-  "scope": "/",
+  "description": "A warm, distraction-free digital Anglican Cursillo Group Reunion Card for following along together.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
+  "categories": ["lifestyle", "education"],
   "background_color": "#f4ecdd",
   "theme_color": "#f4ecdd",
   "icons": [

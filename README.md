@@ -18,7 +18,7 @@ A warm, distraction-free digital version of the Anglican Cursillo Group Reunion 
 
 Open the hosted app in a modern browser and scroll through the reunion together. Use the menu in the bottom-right corner to jump directly to a section. In the Opening section, use the toggle beside the Lord's Prayer to choose the traditional or contemporary form.
 
-To install it, use your browser's **Install app** or **Add to Home Screen** option. Visit the app online once before relying on offline access so the application files can be cached. The reading fonts are loaded from Google Fonts when a connection is available; system fallbacks are used otherwise.
+To install it, use your browser's **Install app** or **Add to Home Screen** option. Visit the app online once before relying on offline access so the application files can be cached. The reading fonts are bundled with the app and remain available offline.
 
 ## Local development
 
@@ -44,6 +44,8 @@ js/app.js               Application entry point
 sw.js                   Offline application-shell cache
 manifest.webmanifest    PWA metadata and icons
 icons/                  Cursillo artwork and application icons
+images/                 Social sharing artwork
+fonts/                  Self-hosted reading fonts and their licences
 ```
 
 When changing an application-shell file, increment `CACHE_VERSION` in `sw.js` so existing installations receive the update.
