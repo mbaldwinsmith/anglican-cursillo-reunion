@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4ecdd; --paper-2:#fbf6ec; --ink:#2b2721; --ink-soft:#4d463b;
+    --muted:#867c6c; --line:#e4d9c5; --line-soft:#eee5d5;
+    --accent:#9c3b2c; --accent-soft:#efe0d7; --gold:#a97f36;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Newsreader',Georgia,serif;line-height:1.65;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;}
+  a:hover{color:var(--gold);}
+  ::selection{background:var(--accent-soft);}
+  @keyframes rc-rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="min-height:100vh;background:
+    radial-gradient(120% 60% at 50% -10%, rgba(255,252,245,.9) 0%, rgba(255,252,245,0) 55%),
+    var(--paper);font-size:20px;">
+
+  <!-- ============ COVER ============ -->
+  <header style="max-width:34em;margin:0 auto;padding:min(14vh,7em) 1.6em 5em;text-align:center;animation:rc-rise .8s ease both;">
+    <div style="width:8.4em;height:8.4em;margin:0 auto 1.6em;border-radius:50%;overflow:hidden;
+        background:#fff;box-shadow:0 0 0 1px var(--line), 0 14px 40px -18px rgba(60,40,20,.45);">
+      <img src="icons/CursilloCross.png" alt="Anglican Cursillo — a cross rising from a circle of people" style="width:118%;height:118%;object-fit:cover;object-position:center 46%;transform:translate(-8%,-6%);" />
+    </div>
+    <div style="font-family:'Figtree',sans-serif;font-weight:600;font-size:.72em;letter-spacing:.28em;
+        text-transform:uppercase;color:var(--accent);margin-bottom:.9em;">Anglican&nbsp;Cursillo</div>
+    <h1 style="margin:0;font-weight:500;font-size:2.9em;line-height:1.08;letter-spacing:-.01em;">Group&nbsp;Reunion Card</h1>
+    <p style="margin:1.1em auto 0;max-width:20em;font-size:1.28em;font-style:italic;color:var(--accent);line-height:1.4;">
+      Christ is counting on you!<br><span style="color:var(--muted);">&hellip;and I on Him!</span></p>
+    <p style="margin:1.8em auto 0;max-width:26em;color:var(--ink-soft);font-size:1.02em;">
+      A movement of the Church providing a method by which Christians are empowered to grow through
+      prayer, study and action, and enabled to share God&rsquo;s love with everyone.</p>
+    <div style="margin-top:2.6em;display:flex;flex-direction:column;align-items:center;gap:.7em;color:var(--muted);">
+      <span style="font-family:'Figtree',sans-serif;font-size:.66em;letter-spacing:.22em;text-transform:uppercase;">Begin together</span>
+      <span aria-hidden="true" style="font-size:1.1em;line-height:1;">&darr;</span>
+    </div>
+  </header>
+
+  <!-- ============ OPENING ============ -->
+  <section data-screen-label="Opening" style="max-width:34em;margin:0 auto;padding:2.5em 1.6em;scroll-margin-top:1em;">
+    <div style="text-align:center;margin-bottom:2.2em;">
+      <div style="font-family:'Figtree',sans-serif;font-weight:600;font-size:1em;letter-spacing:.32em;color:var(--gold);">I</div>
+      <h2 style="margin:.15em 0 0;font-weight:500;font-size:2.05em;">Opening</h2>
+    </div>
+
+    <blockquote style="margin:0 0 2em;padding:.2em 0 .2em 1.1em;border-left:2px solid var(--gold);">
+      <p style="margin:0;font-size:1.3em;font-style:italic;color:var(--ink-soft);line-height:1.5;">
+        &ldquo;Let us consider how to provoke one another to love and good deeds, not neglecting to meet together,
+        as is the habit of some, but encouraging one another.&rdquo;</p>
+      <footer style="margin-top:.7em;font-family:'Figtree',sans-serif;font-size:.8em;letter-spacing:.06em;color:var(--muted);">Hebrews 10:24&ndash;25</footer>
+    </blockquote>
+
+    <p style="margin:0 0 1.6em;color:var(--muted);font-style:italic;text-align:center;">Start by deciding who is to lead on this occasion.</p>
+
+    <p style="margin:0 0 1.4em;">Come, Holy Spirit, fill the hearts of your faithful, and kindle in us the fire of your love.</p>
+
+    <div style="margin:1.8em 0;padding:1.2em 1.3em;background:var(--paper-2);border:1px solid var(--line);border-radius:.7em;">
+      <p style="margin:0 0 .5em;display:flex;gap:.7em;">
+        <span style="color:var(--gold);font-family:'Figtree',sans-serif;font-weight:600;flex:0 0 auto;">&#8483;</span>
+        <span style="font-style:italic;">Send forth your Spirit and we shall be created.</span></p>
+      <p style="margin:0;display:flex;gap:.7em;">
+        <span style="color:var(--accent);font-family:'Figtree',sans-serif;font-weight:600;flex:0 0 auto;">&#8479;</span>
+        <span style="font-style:italic;color:var(--ink-soft);">And you shall renew the face of the earth.</span></p>
+    </div>
+
+    <p style="margin:0 0 1.4em;">Almighty God, who taught the hearts of your faithful people by sending them the light of your
+      Holy Spirit: grant us by the same Spirit to have a right judgement in all things and evermore to
+      rejoice in his holy comfort; through Jesus Christ our Lord. Amen.</p>
+
+    <!-- Lord's Prayer -->
+    <div style="margin:2.2em 0;">
+      <div style="display:flex;align-items:center;gap:.9em;margin-bottom:1em;">
+        <h3 style="margin:0;font-weight:600;font-size:1.05em;color:var(--accent);white-space:nowrap;">The Lord&rsquo;s Prayer</h3>
+        <span style="flex:1;height:1px;background:var(--line);"></span>
+        <div role="tablist" style="display:flex;gap:.3em;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;padding:.2em;">
+          <button type="button" onClick="{{ onTrad }}" style="{{ tradStyle }}">Traditional</button>
+          <button type="button" onClick="{{ onCont }}" style="{{ contStyle }}">Contemporary</button>
+        </div>
+      </div>
+      <p style="margin:0;font-size:1.06em;line-height:1.7;color:var(--ink-soft);">{{ lordsText }}</p>
+    </div>
+
+    <p style="margin:2.2em 0 0;padding-top:1.6em;border-top:1px solid var(--line-soft);color:var(--muted);font-size:.98em;">
+      We share, review, plan, and ask the support of the group for our life in Christ. The person leading takes
+      one section at a time, reading out the appropriate words. Each person present is then invited to respond to that section.</p>
+  </section>
+
+  <!-- ============ PIETY ============ -->
+  <section data-screen-label="Piety" style="max-width:34em;margin:0 auto;padding:2.5em 1.6em;">
+    <div style="text-align:center;margin-bottom:2.2em;">
+      <div style="font-family:'Figtree',sans-serif;font-weight:600;font-size:1em;letter-spacing:.32em;color:var(--gold);">II</div>
+      <h2 style="margin:.15em 0 0;font-weight:500;font-size:2.05em;">Piety</h2>
+    </div>
+
+    <blockquote style="margin:0 0 2em;padding:.2em 0 .2em 1.1em;border-left:2px solid var(--gold);">
+      <p style="margin:0;font-size:1.3em;font-style:italic;color:var(--ink-soft);line-height:1.5;">
+        &ldquo;Those who abide in me and I in them bear much fruit, because apart from me you can do nothing.&rdquo;</p>
+      <footer style="margin-top:.7em;font-family:'Figtree',sans-serif;font-size:.8em;letter-spacing:.06em;color:var(--muted);">John 15:5</footer>
+    </blockquote>
+
+    <h3 style="margin:1.5em 0 .6em;font-family:'Figtree',sans-serif;font-weight:600;font-size:.78em;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">Prayer and Worship</h3>
+    <p style="margin:0 0 1em;font-size:1.12em;">Share one thing you feel has nourished your union with Christ since we last met.</p>
+    <p style="margin:0 0 .7em;font-family:'Figtree',sans-serif;font-size:.78em;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">For example</p>
+    <div style="display:flex;flex-wrap:wrap;gap:.5em;margin-bottom:1.8em;">
+      <span style="padding:.35em .9em;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;font-size:.92em;">Eucharist</span>
+      <span style="padding:.35em .9em;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;font-size:.92em;">Prayer</span>
+      <span style="padding:.35em .9em;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;font-size:.92em;">Other corporate worship</span>
+      <span style="padding:.35em .9em;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;font-size:.92em;">Daily Office</span>
+      <span style="padding:.35em .9em;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;font-size:.92em;">Meditation / Reflection</span>
+      <span style="padding:.35em .9em;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;font-size:.92em;">Reconciliation</span>
+      <span style="padding:.35em .9em;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;font-size:.92em;">Retreat / Quiet Day</span>
+      <span style="padding:.35em .9em;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;font-size:.92em;">Spiritual Direction</span>
+    </div>
+    <p style="margin:1.4em 0 0;padding-left:1.1em;border-left:2px solid var(--accent-soft);font-size:1.12em;">Share one moment since we last met when you felt close to Christ.</p>
+  </section>
+
+  <!-- ============ STUDY ============ -->
+  <section data-screen-label="Study" style="max-width:34em;margin:0 auto;padding:2.5em 1.6em;">
+    <div style="text-align:center;margin-bottom:2.2em;">
+      <div style="font-family:'Figtree',sans-serif;font-weight:600;font-size:1em;letter-spacing:.32em;color:var(--gold);">III</div>
+      <h2 style="margin:.15em 0 0;font-weight:500;font-size:2.05em;">Study</h2>
+    </div>
+
+    <blockquote style="margin:0 0 2em;padding:.2em 0 .2em 1.1em;border-left:2px solid var(--gold);">
+      <p style="margin:0;font-size:1.3em;font-style:italic;color:var(--ink-soft);line-height:1.5;">
+        &ldquo;Let God transform you inwardly by a complete change of your mind. Then you will be able to know
+        the will of God &mdash; what is good and is pleasing to him and is perfect.&rdquo;</p>
+      <footer style="margin-top:.7em;font-family:'Figtree',sans-serif;font-size:.8em;letter-spacing:.06em;color:var(--muted);">Romans 12:2</footer>
+    </blockquote>
+
+    <h3 style="margin:1.5em 0 .6em;font-family:'Figtree',sans-serif;font-weight:600;font-size:.78em;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">Christian Formation</h3>
+    <p style="margin:0 0 1em;font-size:1.12em;">Share something you have learnt from what you have read or experienced since we last met which has
+      deepened your understanding of God&rsquo;s ways or of your Christian calling.</p>
+    <p style="margin:0 0 .7em;font-family:'Figtree',sans-serif;font-size:.78em;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">For example, through</p>
+    <div style="display:flex;flex-wrap:wrap;gap:.5em;margin-bottom:1.8em;">
+      <span style="padding:.35em .9em;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;font-size:.92em;">Bible reading</span>
+      <span style="padding:.35em .9em;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;font-size:.92em;">Art, music or nature</span>
+      <span style="padding:.35em .9em;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;font-size:.92em;">A book</span>
+      <span style="padding:.35em .9em;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;font-size:.92em;">Group Study</span>
+      <span style="padding:.35em .9em;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;font-size:.92em;">A sermon</span>
+      <span style="padding:.35em .9em;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;font-size:.92em;">A course or lecture</span>
+      <span style="padding:.35em .9em;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;font-size:.92em;">A play, film or video</span>
+      <span style="padding:.35em .9em;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;font-size:.92em;">A conversation</span>
+    </div>
+
+    <h3 style="margin:1.8em 0 .6em;font-family:'Figtree',sans-serif;font-weight:600;font-size:.78em;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">Study of Environments</h3>
+    <p style="margin:0;padding-left:1.1em;border-left:2px solid var(--accent-soft);font-size:1.12em;">How are you trying to gain more understanding of one of the groups of people amongst whom you live your
+      daily life, so as to be more effective in influencing them with gospel values?</p>
+  </section>
+
+  <!-- ============ APOSTOLIC ACTION ============ -->
+  <section data-screen-label="Apostolic Action" style="max-width:34em;margin:0 auto;padding:2.5em 1.6em;">
+    <div style="text-align:center;margin-bottom:2.2em;">
+      <div style="font-family:'Figtree',sans-serif;font-weight:600;font-size:1em;letter-spacing:.32em;color:var(--gold);">IV</div>
+      <h2 style="margin:.15em 0 0;font-weight:500;font-size:2.05em;">Apostolic Action</h2>
+    </div>
+
+    <blockquote style="margin:0 0 2em;padding:.2em 0 .2em 1.1em;border-left:2px solid var(--gold);">
+      <p style="margin:0;font-size:1.3em;font-style:italic;color:var(--ink-soft);line-height:1.5;">
+        &ldquo;As the Father has sent me, so I send you.&rdquo;</p>
+      <footer style="margin-top:.7em;font-family:'Figtree',sans-serif;font-size:.8em;letter-spacing:.06em;color:var(--muted);">John 20:21</footer>
+    </blockquote>
+
+    <h3 style="margin:1.5em 0 .6em;font-family:'Figtree',sans-serif;font-weight:600;font-size:.78em;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">Transforming the World for Christ</h3>
+    <p style="margin:0 0 1em;font-size:1.12em;">What steps have you taken since we last met in order to transform one of the environments of your daily life
+      to make it more like Christ would have it be? Does it seem like a success? Or a disappointment?</p>
+    <ul style="margin:0 0 1.8em;padding:0;list-style:none;display:flex;flex-direction:column;gap:.55em;color:var(--ink-soft);">
+      <li style="display:flex;gap:.7em;"><span style="color:var(--gold);">&bull;</span>In home or family life</li>
+      <li style="display:flex;gap:.7em;"><span style="color:var(--gold);">&bull;</span>In your workplace amongst friends or neighbours</li>
+      <li style="display:flex;gap:.7em;"><span style="color:var(--gold);">&bull;</span>In the wider community</li>
+    </ul>
+
+    <h3 style="margin:1.8em 0 .6em;font-family:'Figtree',sans-serif;font-weight:600;font-size:.78em;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">Making Disciples</h3>
+    <p style="margin:0 0 1em;padding-left:1.1em;border-left:2px solid var(--accent-soft);font-size:1.12em;">How have you planned for or taken an opportunity to bring someone to know Christ, or to know him better?</p>
+    <p style="margin:0;padding-left:1.1em;border-left:2px solid var(--accent-soft);font-size:1.12em;">Reviewing your plans &ndash; have you carried out the plans you made at our last meeting?</p>
+
+    <h3 style="margin:1.8em 0 .6em;font-family:'Figtree',sans-serif;font-weight:600;font-size:.78em;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">Planning Your Apostolic Action</h3>
+    <p style="margin:0 0 1.6em;padding-left:1.1em;border-left:2px solid var(--accent-soft);font-size:1.12em;">What are the next steps for you to take in your apostolic action?</p>
+
+    <h3 style="margin:1.8em 0 .6em;font-family:'Figtree',sans-serif;font-weight:600;font-size:.78em;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">Working Together</h3>
+    <p style="margin:0;padding-left:1.1em;border-left:2px solid var(--accent-soft);font-size:1.12em;">Is there something we can plan to work on together and with others?</p>
+  </section>
+
+  <!-- ============ CLOSING ============ -->
+  <section data-screen-label="Closing" style="max-width:34em;margin:0 auto;padding:2.5em 1.6em 1em;">
+    <div style="text-align:center;margin-bottom:2.2em;">
+      <div style="font-family:'Figtree',sans-serif;font-weight:600;font-size:1em;letter-spacing:.32em;color:var(--gold);">V</div>
+      <h2 style="margin:.15em 0 0;font-weight:500;font-size:2.05em;">Closing</h2>
+    </div>
+
+    <blockquote style="margin:0 0 2em;padding:.2em 0 .2em 1.1em;border-left:2px solid var(--gold);">
+      <p style="margin:0;font-size:1.3em;font-style:italic;color:var(--ink-soft);line-height:1.5;">
+        &ldquo;Whatever you do, in word, or deed, do everything in the name of the Lord Jesus, giving thanks to
+        God the Father through him.&rdquo;</p>
+      <footer style="margin-top:.7em;font-family:'Figtree',sans-serif;font-size:.8em;letter-spacing:.06em;color:var(--muted);">Colossians 3:17</footer>
+    </blockquote>
+
+    <p style="margin:0 0 .9em;">Prayer is offered for:</p>
+    <ul style="margin:0 0 1.8em;padding:0;list-style:none;display:flex;flex-direction:column;gap:.55em;color:var(--ink-soft);">
+      <li style="display:flex;gap:.7em;"><span style="color:var(--gold);">&bull;</span>One another</li>
+      <li style="display:flex;gap:.7em;"><span style="color:var(--gold);">&bull;</span>Any who are absent</li>
+      <li style="display:flex;gap:.7em;"><span style="color:var(--gold);">&bull;</span>Those who need our prayers</li>
+    </ul>
+
+    <p style="margin:0;padding:1.3em 1.4em;background:var(--paper-2);border:1px solid var(--line);border-radius:.7em;font-style:italic;color:var(--ink-soft);text-align:center;line-height:1.6;">
+      We give you thanks, Almighty God, for all the benefits you have given us: you who live and reign for ever and ever. Amen.</p>
+  </section>
+
+  <!-- ============ QUIET JUMP MENU ============ -->
+  <div style="position:fixed;right:max(1.1em,env(safe-area-inset-right));bottom:max(1.1em,env(safe-area-inset-bottom));z-index:50;display:flex;flex-direction:column;align-items:flex-end;gap:.7em;font-size:20px;">
+    <nav aria-label="Jump to section" style="{{ menuPanelStyle }}">
+      <button type="button" onClick="{{ goTop }}" style="{{ topItemStyle }}"><span style="opacity:.55;font-size:.8em;">&uarr;</span> Top</button>
+      <button type="button" onClick="{{ goOpening }}" style="{{ openingItemStyle }}"><span style="color:var(--gold);font-family:'Figtree',sans-serif;font-size:.72em;width:1.4em;flex:0 0 auto;">I</span> Opening</button>
+      <button type="button" onClick="{{ goPiety }}" style="{{ pietyItemStyle }}"><span style="color:var(--gold);font-family:'Figtree',sans-serif;font-size:.72em;width:1.4em;flex:0 0 auto;">II</span> Piety</button>
+      <button type="button" onClick="{{ goStudy }}" style="{{ studyItemStyle }}"><span style="color:var(--gold);font-family:'Figtree',sans-serif;font-size:.72em;width:1.4em;flex:0 0 auto;">III</span> Study</button>
+      <button type="button" onClick="{{ goApostolic }}" style="{{ apostolicItemStyle }}"><span style="color:var(--gold);font-family:'Figtree',sans-serif;font-size:.72em;width:1.4em;flex:0 0 auto;">IV</span> Apostolic Action</button>
+      <button type="button" onClick="{{ goClosing }}" style="{{ closingItemStyle }}"><span style="color:var(--gold);font-family:'Figtree',sans-serif;font-size:.72em;width:1.4em;flex:0 0 auto;">V</span> Closing</button>
+    </nav>
+    <button type="button" aria-label="Jump to section" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}" style="{{ triggerStyle }}">
+      <span style="{{ triggerIconStyle }}">
+        <span style="display:block;width:1.05em;height:1.5px;background:currentColor;border-radius:2px;"></span>
+        <span style="display:block;width:1.05em;height:1.5px;background:currentColor;border-radius:2px;"></span>
+        <span style="display:block;width:1.05em;height:1.5px;background:currentColor;border-radius:2px;"></span>
+      </span>
+    </button>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="max-width:34em;margin:0 auto;padding:3em 1.6em 4em;text-align:center;">
+    <div aria-hidden="true" style="color:var(--gold);font-size:1.1em;margin-bottom:1em;">&#10015;</div>
+    <p style="margin:0;font-family:'Figtree',sans-serif;font-size:.78em;letter-spacing:.06em;color:var(--muted);">
+      &copy; British Anglican Cursillo Council 2003</p>
+    <p style="margin:.4em 0 0;font-family:'Figtree',sans-serif;font-size:.68em;color:var(--muted);opacity:.7;">
+      Anglican Cursillo&reg; &mdash; Registered at the U.S. Patent Office</p>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:430,&quot;height&quot;:760},&quot;textScale&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Comfortable&quot;,&quot;Large&quot;,&quot;Extra large&quot;],&quot;default&quot;:&quot;Comfortable&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Reading&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#9c3b2c&quot;,&quot;options&quot;:[&quot;#9c3b2c&quot;,&quot;#3b6ea5&quot;,&quot;#4f6f52&quot;,&quot;#6b4f8a&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Reading&quot;},&quot;lordsPrayerDefault&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Traditional&quot;,&quot;Contemporary&quot;],&quot;default&quot;:&quot;Traditional&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Reading&quot;}}">
+class Component extends DCLogic {
+  state = { variant: null, menuOpen: false, active: '' };
+
+  sections() {
+    return Array.from(document.querySelectorAll('section'));
+  }
+
+  componentDidMount() {
+    this.applyTheme();
+    this._onScroll = () => {
+      const secs = this.sections();
+      const mid = window.scrollY + window.innerHeight * 0.35;
+      let active = -1;
+      secs.forEach((el, i) => {
+        if ((el.getBoundingClientRect().top + window.scrollY) <= mid) active = i;
+      });
+      if (active !== this.state.active) this.setState({ active });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
+
+  scrollTo(idx) {
+    let top = 0;
+    if (idx != null) {
+      const el = this.sections()[idx];
+      if (el) top = el.getBoundingClientRect().top + window.scrollY - 12;
+    }
+    this.setState({ menuOpen: false });
+    this.tweenScroll(top);
+  }
+
+  tweenScroll(target) {
+    if (this._raf) cancelAnimationFrame(this._raf);
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const to = Math.max(0, Math.min(target, max));
+    const from = window.scrollY;
+    const dist = to - from;
+    if (Math.abs(dist) < 2) { window.scrollTo(0, to); return; }
+    const dur = Math.min(700, Math.max(300, Math.abs(dist) * 0.5));
+    const start = performance.now();
+    const step = (now) => {
+      const t = Math.min(1, (now - start) / dur);
+      const e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; // easeInOutQuad
+      window.scrollTo(0, from + dist * e);
+      if (t < 1) this._raf = requestAnimationFrame(step);
+    };
+    this._raf = requestAnimationFrame(step);
+  }
+
+  getRoot() {
+    const sec = document.querySelector('section');
+    return sec ? sec.parentElement : null;
+  }
+
+  applyTheme() {
+    const el = this.getRoot();
+    if (!el) return;
+    const scaleMap = { Comfortable: '20px', Large: '23px', 'Extra large': '26px' };
+    el.style.fontSize = scaleMap[this.props.textScale] || '20px';
+    if (this.props.accent) {
+      el.style.setProperty('--accent', this.props.accent);
+    } else {
+      el.style.removeProperty('--accent');
+    }
+  }
+
+  componentDidUpdate() { this.applyTheme(); }
+
+  get variant() {
+    return this.state.variant || (this.props.lordsPrayerDefault || 'Traditional');
+  }
+
+  renderVals() {
+    const traditional = 'Our Father, who art in heaven, hallowed be thy Name; thy kingdom come; thy will be done, on earth as it is in heaven. Give us this day our daily bread. And forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation, but deliver us from evil. For thine is the kingdom, the power, and the glory, for ever and ever. Amen.';
+    const contemporary = 'Our Father in heaven, hallowed be your Name, your kingdom come, your will be done, on earth as in heaven. Give us today our daily bread. Forgive us our sins as we forgive those who sin against us. Lead us not into temptation, but deliver us from evil. For the kingdom, the power, and the glory are yours, now and for ever. Amen.';
+
+    const scaleMap = { Comfortable: '20px', Large: '23px', 'Extra large': '26px' };
+    const baseSize = scaleMap[this.props.textScale] || '20px';
+
+    const isTrad = this.variant === 'Traditional';
+    const base = {
+      fontFamily: "'Figtree',sans-serif", fontSize: '.72em', fontWeight: 600,
+      letterSpacing: '.02em', border: 'none', borderRadius: '999px',
+      padding: '.45em 1em', cursor: 'pointer', lineHeight: 1
+    };
+    const on = { ...base, background: 'var(--accent)', color: '#fff' };
+    const off = { ...base, background: 'transparent', color: 'var(--muted)' };
+
+    const open = this.state.menuOpen;
+    const item = (idx) => {
+      const on = this.state.active === idx;
+      return {
+        display: 'flex', alignItems: 'center', gap: '.6em', width: '100%',
+        textAlign: 'left', fontFamily: "'Figtree',sans-serif", fontSize: '.82em',
+        fontWeight: on ? 600 : 500, letterSpacing: '.01em',
+        color: on ? 'var(--accent)' : 'var(--ink-soft)',
+        background: on ? 'var(--accent-soft)' : 'transparent',
+        border: 'none', borderRadius: '.55em', padding: '.6em .8em',
+        cursor: 'pointer', whiteSpace: 'nowrap'
+      };
+    };
+
+    return {
+      rootRef: (el) => { this._root = el; this.applyTheme(); },
+      menuOpen: open,
+      toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      goTop: () => this.scrollTo(null),
+      goOpening: () => this.scrollTo(0),
+      goPiety: () => this.scrollTo(1),
+      goStudy: () => this.scrollTo(2),
+      goApostolic: () => this.scrollTo(3),
+      goClosing: () => this.scrollTo(4),
+      topItemStyle: item(-1),
+      openingItemStyle: item(0),
+      pietyItemStyle: item(1),
+      studyItemStyle: item(2),
+      apostolicItemStyle: item(3),
+      closingItemStyle: item(4),
+      menuPanelStyle: {
+        display: 'flex', flexDirection: 'column', gap: '.1em', minWidth: '11em',
+        background: 'var(--paper-2)', border: '1px solid var(--line)',
+        borderRadius: '.9em', padding: '.5em',
+        boxShadow: '0 18px 44px -20px rgba(60,40,20,.5)',
+        transformOrigin: 'bottom right',
+        transition: 'opacity .22s ease, transform .22s ease',
+        opacity: open ? 1 : 0,
+        transform: open ? 'none' : 'translateY(8px) scale(.96)',
+        pointerEvents: open ? 'auto' : 'none'
+      },
+      triggerStyle: {
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        width: '3em', height: '3em', borderRadius: '50%',
+        background: open ? 'var(--accent)' : 'var(--paper-2)',
+        color: open ? '#fff' : 'var(--ink-soft)',
+        border: '1px solid ' + (open ? 'var(--accent)' : 'var(--line)'),
+        boxShadow: '0 10px 26px -12px rgba(60,40,20,.5)',
+        cursor: 'pointer', transition: 'background .2s ease, color .2s ease',
+        WebkitTapHighlightColor: 'transparent'
+      },
+      triggerIconStyle: {
+        display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'center'
+      },
+      lordsText: isTrad ? traditional : contemporary,
+      tradStyle: isTrad ? on : off,
+      contStyle: isTrad ? off : on,
+      onTrad: () => this.setState({ variant: 'Traditional' }),
+      onCont: () => this.setState({ variant: 'Contemporary' })
+    };
+  }
+}
+</script>
+</body>
+</html>
